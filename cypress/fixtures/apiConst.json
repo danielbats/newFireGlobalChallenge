@@ -1,0 +1,7 @@
+{
+    "user": "user/",
+    "generateToken": "generateToken/",
+    "authorized": "authorized/",
+    "books": "books/",
+    "deleteBooks": "books?UserId="
+}

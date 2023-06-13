@@ -1,0 +1,21 @@
+{
+    "createNewUser": {
+        "userName": "test@automation.com",
+        "password": "123456@Abc"
+    },
+    "empty": {},
+    "createBookList": {
+        "userId": "",
+        "collectionOfIsbns": [
+            {
+                "isbn": ""
+            },
+            {
+                "isbn": ""
+            },
+            {
+                "isbn": ""
+            }
+        ]
+    }
+}

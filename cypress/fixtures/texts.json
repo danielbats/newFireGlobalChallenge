@@ -1,0 +1,8 @@
+{
+  "successAddLocationMessage": "Your location succesfully added to your locations list.",
+  "incorrectUsername": "Incorrect username!",
+  "userNotFound": "User not found. Please register to login.",
+  "invalidPassword": "invalid_password",
+  "invalidUsername": "invalid@username.com",
+  "loggedUser": "Daniel"
+}

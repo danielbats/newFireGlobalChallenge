@@ -1,0 +1,104 @@
+pipeline{
+
+    agent any
+
+
+
+    parameters{
+
+        string(name: 'SPEC',defaultValue:"cypress/integration/**/**",description: "Enter the script path that you want to run")
+    }
+
+
+
+    options{
+
+        ansiColor('xterm')
+
+    }
+
+
+
+    stages{
+
+        stage("Build"){
+
+            steps{
+
+                echo "========Building the Application========"
+
+            }
+
+                
+
+        }
+
+        
+
+        stage("Testing"){
+
+            steps{
+
+                echo "========Building the Application========"
+
+                bat "npm install"
+
+                bat "npm run test --spec ${SPEC}"
+
+            }
+
+            post{
+
+
+                success{
+
+                    echo "========A executed successfully========"
+
+                }
+
+                failure{
+
+                    echo "========A execution failed========"
+
+                }
+
+            }
+
+        }
+
+        stage("Deploying"){
+
+            steps{
+
+                echo "========Deployng to Production========"
+
+            }
+
+        }
+
+    }
+
+    post{
+
+        always{
+            echo "========Generating Reports========"
+            publishHTML([allowMissing: true, escapeUnderscores: true, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'reports', reportFiles: '*.html', reportName: 'HTMLReport', reportTitles: 'TestResults'])
+
+        }
+
+        success{
+
+            echo "========pipeline executed successfully ========"
+
+        }
+
+        failure{
+
+            echo "========pipeline execution failed========"
+
+        }
+
+    }
+
+}
+
